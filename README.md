@@ -20,7 +20,15 @@ styled using Material Design.
 
 ## Create `MainFragment`
 
-- 
+- View
+
+## Create `BActivity`
+
+- Change `ActionBarActivity` to `AppCompatActivity`
+
+## Create `BFragment`
+
+-
 
 ## Create the ActionBar
 
