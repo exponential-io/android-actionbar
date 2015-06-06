@@ -16,6 +16,61 @@ styled using Material Design.
 - Add the up button to the ActionBar
 
 
+## Architecture
+
+- Activity's layout file uses an `&lt;include>` to include the `layouts/actionbar.xml` Toolbar
+  layout
+- `actionbar.xml` uses sizes defined in `dimens.xml` to set the height of the `ActionBar`. Android
+  automatically uses the dimensions defined in `values/dimens.xml` when a device is in portrait mode
+  and uses the dimensions defined in `values-land/dimens.xml` when a device is in landscape mode.
+- `actionbar.xml` references the themes defined in `styles.xml`. Android automatically applies
+  the `values/styles.xml` for devices with API < 21 or `values-v21/styles.xml` for devices with
+  API >= 21.
+- Both of the `styles.xml` files use colors defined in `values/colors.xml`.
+
+- Activity's layout
+    - includes Toolbar layout: `layouts/actionbar.xml`
+        - refers to dimensions: `values/dimens.xml` or `values-land/dimens.xml`
+        - refers to themes: `values/styles.xml` or `values-v21/styles.xml`
+            - refers to colors: `values/colors.xml`
+
+The following table shows the various combinations of `dimens.xml`, `styles.xml` and `colors.xml`.
+
+<table style="border: 1px solid #c0c0c0;">
+    <tr>
+        <th></th>
+        <th>Portrait</th>
+        <th>Landscape</th>
+    </tr>
+    <tr>
+        <td>API < 21</td>
+        <td>
+            values/dimens.xml<br/>
+            values/styles.xml<br/>
+            values/colors.xml
+        </td>
+        <td>
+            values-land/dimens.xml<br/>
+            values/styles.xml<br/>
+            values/colors.xml
+        </td>
+    </tr>
+    <tr>
+        <td>API >= 21</td>
+        <td>
+            values/dimens.xml<br/>
+            values-v21/styles.xml<br/>
+            values/colors.xml
+        </td>
+        <td>
+            values-land/dimens.xml<br/>
+            values-v21/styles.xml<br/>
+            values/colors.xml
+        </td>
+    </tr>
+</table>
+
+
 ## Update MainActivity
 
 - Change `ActionBarActivity` to `AppCompatActivity`
