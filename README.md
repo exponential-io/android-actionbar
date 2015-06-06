@@ -20,7 +20,39 @@ styled using Material Design.
 
 ## Create `MainFragment`
 
-- View
+### Update `fragment_main.xml`
+
+- Set the TextView to display 'Main Fragment'.
+- Change `FrameLayout` to `RelativeLayout`.
+- Add a `Button`.
+
+### Create the Fragment
+
+- Create a new blank Fragment named `MainFragment`
+- Change `import android.app.Fragment;` to `import android.support.v4.app.Fragment;`
+- Change `OnFragmentInteractionListener` to `Callbacks`
+- Change `mListener` to `callbacks`
+- Change `ARG_PARAM1` to `ARG_MESSAGE` and set the value to `MainFragment.MESSAGE`
+- Change `mParam1` to `message`
+- In `onCreateView`, split the return statement into assignment and return.
+- Delete the `onButtonPressed` method.
+- Change the Callbacks Interface method name to `displayBActivity`.
+- Delete `param2` and associated constants, local variables, everywhere in the Fragment.
+- Delete all of the `TODO` comments
+- Set the click listener for the `Button` in `fragment_main.xml`. Call the `displayBActivity` method
+  when the button is clicked.
+
+
+## Update `activity_main.xml`.
+
+- Delete the `TextView`
+- Insert a `FrameLayout` in the `RelativeLayout`
+
+### Update `MainActivity` to use `MainFragment`
+
+- Add `implements MainFragment.Callbacks` to the method declaration.
+- Override the `displayBActivity` Interface method.
+- Create an instance of `MainFragment` in the `onCreate` method and insert it into the Activity
 
 ## Create `BActivity`
 

@@ -1,17 +1,28 @@
 package io.exponential.actionbar;
 
 import android.os.Bundle;
+import android.support.v4.app.FragmentManager;
+import android.support.v4.app.FragmentTransaction;
 import android.support.v7.app.AppCompatActivity;
 import android.view.Menu;
 import android.view.MenuItem;
 
 
-public class MainActivity extends AppCompatActivity {
+public class MainActivity extends AppCompatActivity
+    implements MainFragment.Callbacks {
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
+
+        FragmentManager fm = getSupportFragmentManager();
+        FragmentTransaction ft = fm.beginTransaction();
+
+        MainFragment mainFragment = MainFragment.newInstance("Hi from MainActivity");
+        ft.add(R.id.container, mainFragment);
+
+        ft.commit();
     }
 
     @Override
@@ -34,5 +45,10 @@ public class MainActivity extends AppCompatActivity {
         }
 
         return super.onOptionsItemSelected(item);
+    }
+
+    @Override
+    public void displayBActivity() {
+        // Do nothing yet...until we create BActivity
     }
 }
