@@ -242,3 +242,5 @@ In this example, we will add an action that displays a `Toast` message.
 
 ## Add menu items for `BActivity`
 
+Repeat the same steps to add an item to BActivity's menu. In a production app, you can support
+different ActionBar Actions per Activity. 
