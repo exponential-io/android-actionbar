@@ -6,13 +6,15 @@ styled using Material Design.
 ## Process overview
 
 - Create a new project with that uses **API 14: Android 4.0 (IceCreamSandwich)**. The new project
-  should have a blank Activity.
+  should have a blank Activity named `MainActivity`.
 - Create `MainFragment` and insert the Fragment into `MainActivity`
+- Create `BActivity` and `BFragment`. Insert `BFragment` into `BActivity`.
+- Update the theme to disable the default ActionBar.
 - Create the ActionBar
 - Add menu items to the ActionBar
-- Create the CreateCompanyActivity
-- Add the ActionBar to the CreateCompanyActivity
+- Add the ActionBar to `BActivity`
 - Add the up button to the ActionBar
+
 
 ## Update MainActivity
 
@@ -103,20 +105,44 @@ styled using Material Design.
 - Call `startActivity()` in `MainActivity.displayBActivity()`
 
 
+## Update the theme
+
+We must disable the default `ActionBar` before we can create a `Toolbar` and set it as the
+`ActionBar`.
+
+### Colors
+
+- Create `res/values/colors.xml`
+
+### Dimensions
+
+- Update `res/values/dimens.xml`
+- Create `res/values-land/dimens.xml`
+
+### Styles
+
+- Update `res/values/styles.xml`
+- Create `res/values-v21/styles.xml`
+
+### Set style in `AndroidManifest.xml`
+
+- In `AndroidManifest.xml` change `android:theme="@style/AppTheme"` to
+  `android:theme="@style/Exponential.Theme.Colors"`.
 
 
 ## Create the ActionBar
 
-We're going to create a Toolbar and set it as the ActionBar.
+Next, we will create a Toolbar and set it as the ActionBar.
 
-- Create theme files:
-    - `res/values/styles.xml`
-    - `res/values-land/styles.xml`
-    - `res/values-v21/styles.xml`
-- Create the dimens, colors and attrs resource files
-    -
 - Create layout/actionbar.xml
-- in Activity.onCreate() find toolbar and call setSupportActionBar()
-- Create strings, dimens, etc. resources
-- update the layout structure of layout/activity_main.xml
-    - include app bar in main_activity.xml
+    - Set the root element to `android.support.v7.widget.Toolbar`.
+    - Add `xmlns:app`
+    - Set `android:layout_height="@dimen/actionbar_height"`
+    - Add `app:theme`
+    - Add `app:popupTheme`
+
+## Set the `Toolbar` as the `ActionBar`
+
+- In `layout/activity_main.xml`, include the `actionbar` layout.
+- In `layout/activity_main.xml`, remove all of the padding from `RelativeLayout`.
+- In `MainActivity.onCreate()` find the Toolbar and call `setSupportActionBar()`
