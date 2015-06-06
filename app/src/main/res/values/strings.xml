@@ -9,4 +9,5 @@
     <string name="fragment_main_title">Main Fragment</string>
     <string name="display_bactivity">Display Activity B</string>
     <string name="title_activity_b">BActivity</string>
+    <string name="fragment_b_title">B Fragment</string>
 </resources>

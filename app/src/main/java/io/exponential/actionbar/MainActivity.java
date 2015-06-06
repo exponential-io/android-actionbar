@@ -1,5 +1,6 @@
 package io.exponential.actionbar;
 
+import android.content.Intent;
 import android.os.Bundle;
 import android.support.v4.app.FragmentManager;
 import android.support.v4.app.FragmentTransaction;
@@ -49,6 +50,7 @@ public class MainActivity extends AppCompatActivity
 
     @Override
     public void displayBActivity() {
-        // Do nothing yet...until we create BActivity
+        Intent intent = new Intent(MainActivity.this, BActivity.class);
+        startActivity(intent);
     }
 }

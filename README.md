@@ -20,15 +20,16 @@ styled using Material Design.
 
 ## Create `MainFragment`
 
+- Create a new blank Fragment named `MainFragment`
+
 ### Update `fragment_main.xml`
 
 - Set the TextView to display 'Main Fragment'.
 - Change `FrameLayout` to `RelativeLayout`.
 - Add a `Button`.
 
-### Create the Fragment
+### Update `MainFragment.java`
 
-- Create a new blank Fragment named `MainFragment`
 - Change `import android.app.Fragment;` to `import android.support.v4.app.Fragment;`
 - Change `OnFragmentInteractionListener` to `Callbacks`
 - Change `mListener` to `callbacks`
@@ -42,8 +43,7 @@ styled using Material Design.
 - Set the click listener for the `Button` in `fragment_main.xml`. Call the `displayBActivity` method
   when the button is clicked.
 
-
-## Update `activity_main.xml`.
+### Update `activity_main.xml`.
 
 - Delete the `TextView`
 - Insert a `FrameLayout` in the `RelativeLayout`
@@ -54,14 +54,56 @@ styled using Material Design.
 - Override the `displayBActivity` Interface method.
 - Create an instance of `MainFragment` in the `onCreate` method and insert it into the Activity
 
+
 ## Create `BActivity`
 
-- When creating `BActivity`, set the parent to `MainActivity`
-- Change `ActionBarActivity` to `AppCompatActivity`
+- Create a new blank Activity named `BActivity`
+- `ActionBarActivity` to `AppCompatActivity`
+
 
 ## Create `BFragment`
 
--
+- Create a new blank Fragment named `BFragment`
+- When creating `BActivity`, set the parent to `MainActivity`
+
+### Update `fragment_b.xml`
+
+- Set the TextView to display 'B Fragment'.
+- Change `FrameLayout` to `RelativeLayout`.
+
+
+### Update `BFragment.java`
+
+- Change `ActionBarActivity` to `AppCompatActivity`
+- Change `import android.app.Fragment;` to `import android.support.v4.app.Fragment;`.
+- Delete the `OnFragmentInteractionListener` Interface.
+- Delete `mListener`.
+- Delete `ARG_PARAM1` and `ARG_PARAM2`.
+- Delete `mParam1` and `mParam1` and `param1` and `param2` from all parts of the code.
+- Delete the `Bundle` related code from `newInstance`.
+- Delete the `getArguments` related code from `onCreate`.
+- Delete the Interface related code from `onAttach`.
+- Delete the Interface related code from `onDetach`.
+- In `onCreateView`, split the return statement into assignment and return.
+- Delete the `onButtonPressed` method.
+- Delete all of the `TODO` comments
+
+### Update `activity_b.xml`.
+
+- Delete the `TextView`
+- Insert a `FrameLayout` in the `RelativeLayout`
+
+### Update `BActivity` to use `BFragment`
+
+- Create an instance of `BFragment` in the `onCreate` method and insert it into the Activity
+
+
+## Start `BActivity` in `MainActivity.displayBActivity()`
+
+- Call `startActivity()` in `MainActivity.displayBActivity()`
+
+
+
 
 ## Create the ActionBar
 
