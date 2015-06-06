@@ -153,3 +153,15 @@ Next, we will create a Toolbar and set it as the ActionBar.
 - In `layout/activity_b.xml`, include the `actionbar` layout.
 - In `layout/activity_b.xml`, remove all of the padding from `RelativeLayout`.
 - In `BActivity.onCreate()` find the Toolbar and call `setSupportActionBar()`
+
+
+## Add the up button to the ActionBar
+
+- In `BActivity.onCreate()`, set `getSupportActionBar().setDisplayHomeAsUpEnabled(true);`
+
+ref: https://developer.android.com/training/basics/actionbar/adding-buttons.html
+ref: http://developer.android.com/training/implementing-navigation/ancestral.html
+
+## Add menu items for `MainActivity`
+
+## Add menu items for `BActivity`
