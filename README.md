@@ -146,3 +146,10 @@ Next, we will create a Toolbar and set it as the ActionBar.
 - In `layout/activity_main.xml`, include the `actionbar` layout.
 - In `layout/activity_main.xml`, remove all of the padding from `RelativeLayout`.
 - In `MainActivity.onCreate()` find the Toolbar and call `setSupportActionBar()`
+
+
+## Use the ActionBar in `BActivity`
+
+- In `layout/activity_b.xml`, include the `actionbar` layout.
+- In `layout/activity_b.xml`, remove all of the padding from `RelativeLayout`.
+- In `BActivity.onCreate()` find the Toolbar and call `setSupportActionBar()`
