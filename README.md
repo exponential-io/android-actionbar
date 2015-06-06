@@ -56,6 +56,7 @@ styled using Material Design.
 
 ## Create `BActivity`
 
+- When creating `BActivity`, set the parent to `MainActivity`
 - Change `ActionBarActivity` to `AppCompatActivity`
 
 ## Create `BFragment`
